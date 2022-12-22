@@ -16,9 +16,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
     
-      - name: Ballerina Build
+      - name: Test
         uses: ballerina-platform/ballerina-action@master
         with:
           args: 
             test
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
 
